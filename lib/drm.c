@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/cdefs.h>
+#include <sys/errno.h>
 #include <sys/ioctl.h>
 #include <sys/mman.h>
 #include <sys/types.h>
@@ -33,7 +34,9 @@
 #include "log.h"
 #include "util.h"
 
+#ifndef ARRAY_SIZE
 #define ARRAY_SIZE(A) (sizeof(A)/sizeof(*(A)))
+#endif
 
 typedef struct GRSurface {
     int width;

@@ -16,7 +16,9 @@
  */
 
 extern "C" {
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
 #include <sys/stat.h>
 #include <sys/mount.h>
 #include <errno.h>

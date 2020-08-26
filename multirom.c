@@ -1762,7 +1762,7 @@ bool LoadSplitPolicy() {
         return false;
     }
     // odm_sepolicy.cil is default but optional.
-    const char* version_as_string = NULL;
+    char* version_as_string = NULL;
     asprintf(&version_as_string, "%d", max_policy_version);
     char* plat_policy_cil_file = "/system/etc/selinux/plat_sepolicy.cil";
     char* plat_policy_cil_file_sar = "/system/system/etc/selinux/plat_sepolicy.cil";

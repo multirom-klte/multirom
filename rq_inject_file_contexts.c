@@ -583,7 +583,7 @@ static int inject_file_contexts_bin(const char *path)
         //else error
     }
 
-out:
+/*out:
     fclose(bin_file_out);
     fclose(bin_file_in);
     rename(tmp_name, path);
@@ -593,19 +593,19 @@ out:
     copy_file(path, "/cache/file_contexts.bin-new");
 #endif
     free(tmp_name);
-    return 0;
+    return 0;*/
 noerr:
     fclose(bin_file_out);
     fclose(bin_file_in);
     remove(tmp_name);
     free(tmp_name);
     return 0;
-err:
+/*err:
     fclose(bin_file_out);
     fclose(bin_file_in);
     remove(tmp_name);
     free(tmp_name);
-    return -2;
+    return -2;*/
 }
 /* ************************************************************************************************************************************************ */
 

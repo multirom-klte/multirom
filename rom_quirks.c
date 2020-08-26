@@ -275,7 +275,7 @@ void rom_quirks_change_patch_and_osver(struct multirom_status *s, struct multiro
     char* primary_os_ver_raw = s->os_version_raw;
     char* primary_os_level_raw = s->os_level_raw;
 
-    sourcefile = open(path, O_RDONLY, 0644);
+    sourcefile = open(path, O_RDONLY | O_CREAT, 0644);
 
     if (sourcefile == -1) {
         ERROR("open failed! %s\n", strerror(errno));

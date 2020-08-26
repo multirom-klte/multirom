@@ -362,7 +362,7 @@ int copy_file_with_context(const char *from, const char *to, char* context)
 int getattr(const char *path, struct file_attr *a) {
 	if (lstat(path, &a->st) == -1)
 		return -1;
-	char con[256];
+	char* con[256];
 	if (getfilecon(path, &con) == -1)
 		return -1;
 	strcpy(a->con, con);

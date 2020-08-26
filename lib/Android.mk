@@ -21,7 +21,7 @@ common_SRC_FILES := \
     touch_tracker.c \
     util.c \
     workers.c \
-	klog.c \
+    klog.c \
 
 common_C_INCLUDES := $(multirom_local_path)/lib \
     external/libpng \
@@ -33,6 +33,8 @@ common_C_INCLUDES := $(multirom_local_path)/lib \
 # With these, GCC optimizes aggressively enough so full-screen alpha blending
 # is quick enough to be done in an animation
 common_C_FLAGS := -O3 -funsafe-math-optimizations
+common_C_FLAGS += -Wno-unused-variable -Wno-unused-parameter -Wno-unused-label -Wno-sign-compare
+common_C_FLAGS += -Wno-unused-function -Wno-incompatible-pointer-types -Wno-undefined-inline
 
 ifeq ($(MR_INPUT_TYPE),)
     MR_INPUT_TYPE := type_b
@@ -63,8 +65,8 @@ endif
 ifeq ($(MR_DEVICE_HAS_DRM_GRAPHICS),true)
     common_C_FLAGS += -DMR_DEVICE_HAS_DRM_GRAPHICS
     common_C_INCLUDES +=  \
-		external/libdrm \
-		external/libdrm/include/drm
+        external/libdrm \
+        external/libdrm/include/drm
     common_SRC_FILES += \
         drm.c
 endif
@@ -94,8 +96,6 @@ endif
 include $(multirom_local_path)/device_defines.mk
 
 include $(BUILD_STATIC_LIBRARY)
-
-
 
 include $(CLEAR_VARS)
 

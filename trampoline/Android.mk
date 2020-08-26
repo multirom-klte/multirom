@@ -16,6 +16,9 @@ LOCAL_STATIC_LIBRARIES := libcutils libc libmultirom_static libbootimg libselinu
 LOCAL_C_INCLUDES += system/extras/libbootimg/include
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 
+LOCAL_CFLAGS += -Wno-unused-variable -Wno-unused-parameter -Wno-writable-strings -Wno-sign-compare
+LOCAL_CFLAGS += -Wno-unused-function -Wno-unused-label
+
 ifeq ($(MR_INIT_DEVICES),)
     $(info MR_INIT_DEVICES was not defined in device files!)
 endif

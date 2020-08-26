@@ -31,6 +31,10 @@ LOCAL_CFLAGS += -O3 -funsafe-math-optimizations
 
 #LOCAL_CFLAGS += -D_FORTIFY_SOURCE=2 -fstack-protector-all -O0 -g -fno-omit-frame-pointer -Wall
 
+LOCAL_CFLAGS += -Wno-unused-function -Wno-parentheses -Wno-unused-label -Wno-undefined-inline
+LOCAL_CFLAGS += -Wno-unused-variable -Wno-unused-parameter -Wno-sign-compare
+LOCAL_CFLAGS += -Wno-sometimes-uninitialized -Wno-logical-op-parentheses
+
 LOCAL_MODULE:= multirom
 LOCAL_MODULE_TAGS := optional
 
